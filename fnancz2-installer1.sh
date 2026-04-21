@@ -15,7 +15,7 @@ cd "$gamename"
 unzip "$gamezip" 
 rm "$gamezip"
 mkdir "assets"
-rm "Five Nights at NCZ AE.exe"
+rm "FNANCZ_2.exe"
 mv "data.win" "assets"
 mv "6am_animation.mp4" "assets"
 mv "options.ini" "assets"
@@ -30,5 +30,5 @@ mv icon.png assets
 mv libNekoPresence_x64_linux_arm64-v8a.so assets
 unzip lib.zip
 rm lib.zip
-chmod +x Five_Nights_at_NCZ_AE
+chmod +x Five_Nights_at_NCZ_2
 chmod +x run.sh
