@@ -3,6 +3,9 @@ A Script that builds Five Night's at NCZ 2 game made by MM33 to a usable linux e
 
 *Basically a FNAF fan made game.*
 
+> [!NOTICE]
+> This script is still experimental so if you experience bugs, let me know in discord
+
 # Linux Installation Guide
 - Download the game zip from discord
 *Note: make sure you have `unzip` and `wget` packages installed beforehand*
