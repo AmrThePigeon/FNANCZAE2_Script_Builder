@@ -1,5 +1,6 @@
 echo -e "\e[31mP.S: you must give full path of the zip not a shortcut\e[0m"
 read -r -p "Where is the path that you have the zip of the game downloaded? Defaulted=Downloads:" path
+scriptlocation=$(pwd -L)
 cd "$HOME/Downloads"
 cd "$path" # kinda stupid way that handles the operation but eh works for now
 gamezip=$(ls -v -r 'FNANCZ_2 v'* | head -n 1)
@@ -38,3 +39,4 @@ unzip lib.zip
 rm lib.zip
 chmod +x Five_Nights_at_NCZ_2
 chmod +x run.sh
+rm "$scriptlocation/fnancz2-installer1.sh"
