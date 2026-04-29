@@ -8,7 +8,9 @@ A Script that builds Five Night's at NCZ 2 game made by MM33 to a usable linux e
 
 # Linux Installation Guide
 - Download the game zip from discord
+
 *Note: make sure you have `unzip` and `wget` packages installed beforehand*
+
 - Run this command line
 ```
 rm -f fnancz2-installer1.sh >/dev/null 2>&1 && wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/fnancz2-installer1.sh --no-cache && chmod +x fnancz2-installer1.sh && ./fnancz2-installer1.sh
