@@ -18,4 +18,5 @@ rm -f fnancz2-installer1.sh >/dev/null 2>&1 && wget https://raw.githubuserconten
 Enjoy playing the game!
 
 *< If there were errors during the installation, let me know on discord. >*
+
 see ya next time
