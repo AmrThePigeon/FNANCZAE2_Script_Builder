@@ -8,11 +8,13 @@ gamename="Five Nights at NCZ 2"
 
 if [ -f "$gamezip" ]; then
     echo -e "\e[31mError: the game zip file doesn't exist in $(pwd -L)!\e[0m"
+    rm "$scriptlocation/fnancz2-installer1.sh"
     exit 1
 fi
 
 if [ -d "$gamename" ]; then
     echo -e "\e[31mError: '$gamename' folder already exists at this location!\e[0m"
+    rm "$scriptlocation/fnancz2-installer1.sh"
     exit 1
 fi
 
