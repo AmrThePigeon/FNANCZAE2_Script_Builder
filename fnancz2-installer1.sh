@@ -33,13 +33,13 @@ mv "6am_animation.mp4" "assets"
 mv "options.ini" "assets"
 mv "assets/data.win" "assets/game.unx"
 rm NekoPresence_x64.dll
-wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/Five_Nights_at_NCZ_2
-wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/lib.zip
-wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/run.sh
-wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/liblibnekopresence_linux_arm64-v8a.so
-wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/icon.png
+wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/Five_Nights_at_NCZ_2 --no-cache
+wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/lib.zip --no-cache
+wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/run.sh --no-cache
+wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/liblibnekopresence_linux_arm64-v8a.so --no-cache
+wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/icon.png --no-cache
 mv icon.png assets
-mv "liblibnekopresence_linux_arm64-v8a.so" assets
+mv liblibnekopresence_linux_arm64-v8a.so assets
 unzip lib.zip
 rm lib.zip
 chmod +x Five_Nights_at_NCZ_2
