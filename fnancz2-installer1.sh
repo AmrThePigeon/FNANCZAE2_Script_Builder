@@ -3,7 +3,7 @@ read -r -p "Where is the path that you have the zip of the game downloaded? Defa
 scriptlocation=$(pwd -L)
 gamezip=$(ls -v -r 'FNANCZ_2 v'* | head -n 1)
 gamename="Five Nights at NCZ 2"
-if [ -f "$gamezip" ]; then
+if [ ! -f "$gamezip" ]; then
     rm -f "$scriptlocation/fnancz2-installer1.sh"
     echo -e "\e[31mError: the game zip file doesn't exist in $(pwd -L)!\e[0m"
     exit 1
