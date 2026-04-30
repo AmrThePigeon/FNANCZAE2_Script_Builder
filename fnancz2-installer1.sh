@@ -8,14 +8,14 @@ echo -e "\e[31mP.S: you must give full path of the zip not a shortcut\e[0m"
 read -r -p "Where is the path that you have the zip of the game downloaded? Defaulted=Downloads:" path
 gamezip=$(ls -v -r 'FNANCZ_2 v'* | head -n 1)
 gamename="Five Nights at NCZ 2"
+
+cd "$HOME/Downloads"
+cd "$path" # kinda stupid way that handles the operation but eh works for now
 if [ ! -f "$gamezip" ]; then
     echo -e "\e[31mError: the game zip file doesn't exist in $(pwd -L)!\e[0m"
     exit 1
 
 fi
-
-cd "$HOME/Downloads"
-cd "$path" # kinda stupid way that handles the operation but eh works for now
 
 if [ -d "$gamename" ]; then
     echo -e "\e[31mError: '$gamename' folder already exists at this location!\e[0m"
