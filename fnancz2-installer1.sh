@@ -3,6 +3,12 @@ scriptdeletion() {
 rm -f "$scriptlocation/fnancz2-installer1.sh"
 }
 trap scriptdeletion EXIT
+
+path="${path%\"}"
+path="${path#\"}"
+path="${path%\'}"
+path="${path#\'}"
+
 echo -e "\e[31mP.S: you must give full path of the zip not a shortcut\e[0m"
 read -r -p "Where is the path that you have the zip of the game downloaded? Defaulted=Downloads:" path
 gamezip=$(ls -v -r 'FNANCZ_2 v'* | head -n 1)
