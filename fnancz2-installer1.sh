@@ -10,11 +10,11 @@ gamename="Five Nights at NCZ 2"
 
 cd "$HOME/Downloads" 2>/dev/null
 cd "$path" 2>/dev/null # kinda stupid way that handles the operation but eh works for now
-gamezip2=$(ls -v -r 'FNANCZ_2+v'* 2>/dev/null | head -n 1)
+gamezip2=$(ls -v -r 'FNaNCZ_2+v'* 2>/dev/null | head -n 1)
 if [ -f "$gamezip2" ]; then
     mv "$gamezip2" "${gamezip2//+/ }"
 fi
-gamezip=$(ls -v -r 'FNANCZ_2 v'* 2>/dev/null | head -n 1)
+gamezip=$(ls -v -r 'FNaNCZ_2 v'* 2>/dev/null | head -n 1)
 if [ ! -f "$gamezip" ]; then
     echo -e "\e[31mError: the game zip file doesn't exist in $(pwd -L)!\e[0m"
     exit 1
