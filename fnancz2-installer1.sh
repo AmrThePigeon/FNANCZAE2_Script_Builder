@@ -44,6 +44,9 @@ wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/ref
 wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/run.sh --no-cache
 wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/liblibnekopresence_linux_arm64-v8a.so --no-cache
 wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/icon.png --no-cache
+wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/libNekoPresence_x64_linux_arm64-v8a.so --no-cache
+
+mv libNekoPresence_x64_linux_arm64-v8a.so assets
 mv icon.png assets
 mv liblibnekopresence_linux_arm64-v8a.so assets
 unzip lib.zip
