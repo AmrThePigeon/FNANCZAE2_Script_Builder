@@ -53,3 +53,5 @@ unzip lib.zip
 rm lib.zip
 chmod +x Five_Nights_at_NCZ_2
 chmod +x run.sh
+
+echo -e "\033[0;34mCongrats, looks like the game has been installed properly. Check for 'Five Nights at NCZ 2' Directory in there.\033[0m"
