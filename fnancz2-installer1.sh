@@ -35,7 +35,7 @@ rm "$gamezip"
 mkdir "assets"
 rm "FNANCZ 2.exe"
 mv "data.win" "assets"
-mv "6am_animation.mp4" "assets"
+mv "6am-animation.mp4" "assets"
 mv "options.ini" "assets"
 mv "assets/data.win" "assets/game.unx"
 rm NekoPresence_x64.dll
