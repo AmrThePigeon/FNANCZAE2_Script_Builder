@@ -9,8 +9,7 @@ echo -e "Press [ENTER] if the game is installed in $HOME/Downloads directory."
 read -r -p "Game zip file path [Defaulted=Downloads]:" path
 gamename="Five Nights at NCZ 2"
 
-cd "$HOME/Downloads" 2>/dev/nu
-ll
+cd "$HOME/Downloads" 2>/dev/null
 cd "$path" 2>/dev/null # kinda stupid way that handles the operation but eh works for now
 gamezip2=$(ls -v -r 'FNaNCZ+2+v'* 2>/dev/null | head -n 1)
 if [ -f "$gamezip2" ]; then
