@@ -61,3 +61,4 @@ if [ -f "FNANCZ 2.exe" && -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/li
      echo -e "\033[0;34mCongrats, looks like the game has been installed properly. Check for 'Five Nights at NCZ 2' Directory in there.\033[0m"
 else
      echo -e "\e[31mOops! Looks like the game hasn't been installed properly. Retry using the script on a directory with full access to read & write permissions.\e[0m"
+fi
