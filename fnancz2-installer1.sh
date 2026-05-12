@@ -11,6 +11,7 @@ gamename="Five Nights at NCZ 2"
 
 cd "$HOME/Downloads" 2>/dev/null
 cd "$path" 2>/dev/null # kinda stupid way that handles the operation but eh works for now
+currentdir=$(pwd -L)
 gamezip2=$(ls -v -r 'FNaNCZ+2+v'* 2>/dev/null | head -n 1)
 if [ -f "$gamezip2" ]; then
     mv "$gamezip2" "${gamezip2//+/ }"
@@ -132,4 +133,11 @@ if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" &&
      echo -e "\033[0;34mCongrats, looks like the game has been installed properly. Check for 'Five Nights at NCZ 2' Directory in there.\033[0m"
 else
      echo -e "\e[31mOops! Looks like the game hasn't been installed properly. Retry using the script on a directory with full access to read & write permissions.\e[0m"
+     read -r -p "Are you sure you want to keep the game directory? [y/N]:"answer
+     if [ "$answer" == "Y" || "$answer" == "y" ]; then
+     echo -e "\033[0;34mThe game directory is not going to be deleted\033[0m"
+     else
+          echo -e "\e[31mDeleting the game directory...\e[0m"
+          rm -rf "$currentdir/Five Nights at NCZ 2"
+          fi
 fi
