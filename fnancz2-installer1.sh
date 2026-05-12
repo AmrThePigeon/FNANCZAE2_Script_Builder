@@ -59,6 +59,75 @@ unzip lib.zip
 rm lib.zip
 chmod +x Five_Nights_at_NCZ_2
 chmod +x run.sh
+
+if [ ! -f "Five_Nights_at_NCZ_2" ]; then
+     echo -e "\e[31m'Five_Nights_at_NCZ_2' file not found\e[0m"
+fi
+
+if [ ! -f "run.sh" ]; then
+     echo -e "\e[31m'run.sh' file not found\e[0m"
+fi
+
+if [ ! -f "lib/libcrypto.so.1.0.0" ]; then
+     echo -e "\e[31m'lib/libcrypto.so.1.0.0' file not found\e[0m"
+fi
+
+if [ ! -f "lib/libcurl-gnutls.so.4" ]; then
+     echo -e "\e[31m'lib/libcurl-gnutls.so.4' file not found\e[0m"
+fi
+
+if [ ! -f "lib/libgcrypt.so.11" ]; then
+     echo -e "\e[31m'lib/libgcrypt.so.11' file not found\e[0m"
+fi
+
+if [ ! -f "lib/libGLU.so.1" ]; then
+     echo -e "\e[31m'lib/libGLU.so.1' file not found\e[0m"
+fi
+
+if [ ! -f "lib/libhogweed.so.4" ]; then
+     echo -e "\e[31m'lib/libhogweed.so.4' file not found\e[0m"
+fi
+
+if [ ! -f "lib/libidn.so.11" ]; then
+     echo -e "\e[31m'lib/libidn.so.11' file not found\e[0m"
+fi
+
+if [ ! -f "lib/libnettle.so.6" ]; then
+     echo -e "\e[31m'lib/libnettle.so.6' file not found\e[0m"
+fi
+
+if [ ! -f "lib/librtmp.so.0" ]; then
+     echo -e "\e[31m'lib/librtmp.so.0' file not found\e[0m"
+fi
+
+if [ ! -f "lib/libssl.so.1.0.0" ]; then
+     echo -e "\e[31m'lib/libssl.so.1.0.0' file not found\e[0m"
+fi
+
+if [ ! -f "assets/6am_animation.mp4" ]; then
+     echo -e "\e[31m'assets/6am_animation.mp4' file not found\e[0m"
+fi
+
+if [ ! -f "assets/game.unx" ]; then
+     echo -e "\e[31m'assets/game.unx' file not found\e[0m"
+fi
+
+if [ ! -f "assets/icon.png" ]; then
+     echo -e "\e[31m'assets/icon.png' file not found\e[0m"
+fi
+
+if [ ! -f "assets/liblibnekopresence_linux_arm64-v8a.so" ]; then
+     echo -e "\e[31m'assets/liblibnekopresence_linux_arm64-v8a.so' file not found\e[0m"
+fi
+
+if [ ! -f "assets/libNekoPresence_x64_linux_arm64-v8a.so" ]; then
+     echo -e "\e[31m'assets/libNekoPresence_x64_linux_arm64-v8a.so' file not found\e[0m"
+fi
+
+if [ ! -f "assets/options.ini" ]; then
+     echo -e "\e[31m'assets/options.ini' file not found\e[0m"
+fi
+
 if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" && -f "lib/libcurl-gnutls.so.4" && -f "lib/libgcrypt.so.11" && -f "lib/libGLU.so.1" && -f "lib/libhogweed.so.4" && -f "lib/libidn.so.11" && -f "lib/libnettle.so.6" && -f "lib/librtmp.so.0" && -f "lib/libssl.so.1.0.0" && -f "assets/6am_animation.mp4" && -f "assets/game.unx" && -f "assets/icon.png" && -f "assets/liblibnekopresence_linux_arm64-v8a.so" && -f "assets/libNekoPresence_x64_linux_arm64-v8a.so" && -f "assets/options.ini" ]]; then
      echo -e "\033[0;34mCongrats, looks like the game has been installed properly. Check for 'Five Nights at NCZ 2' Directory in there.\033[0m"
 else
