@@ -29,7 +29,7 @@ fi
 
 mkdir "$gamename"
 if [ ! -d "$gamename" ]; then
-    echo -e "\e[31mLooks like I don't have permission to do that. Try the script again on a directory with full read-write access.\e[0m"
+    echo -e "\e[31mLooks like I don't have permission to do that. Try the script again on a directory with full read & write access.\e[0m"
 fi
 
 cp "$gamezip" "$gamename"
