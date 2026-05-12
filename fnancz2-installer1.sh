@@ -134,7 +134,7 @@ if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" &&
 else
      echo -e "\e[31mOops! Looks like the game hasn't been installed properly. Retry using the script on a directory with full access to read & write permissions.\e[0m"
      read -r -p "Are you sure you want to keep the game directory? [y/N]:" answer
-     if [ "$answer" == "Y" || "$answer" == "y" ]; then
+     if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
      echo -e "\033[0;34mThe game directory is not going to be deleted\033[0m"
      else
           echo -e "\e[31mDeleting the game directory...\e[0m"
