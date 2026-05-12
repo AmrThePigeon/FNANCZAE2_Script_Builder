@@ -11,7 +11,6 @@ gamename="Five Nights at NCZ 2"
 
 cd "$HOME/Downloads" 2>/dev/null
 cd "$path" 2>/dev/null # kinda stupid way that handles the operation but eh works for now
-currentdir=$(pwd -L)
 gamezip2=$(ls -v -r 'FNaNCZ+2+v'* 2>/dev/null | head -n 1)
 if [ -f "$gamezip2" ]; then
     mv "$gamezip2" "${gamezip2//+/ }"
@@ -29,6 +28,10 @@ if [ -d "$gamename" ]; then
 fi
 
 mkdir "$gamename"
+if [ ! -d "$gamename" ]
+    echo -e "\e[31mLooks like I don't have permission to do that. Try the script again on a directory with full read-write access.\e[0m"
+fi
+
 cp "$gamezip" "$gamename"
 cd "$gamename"
 unzip "$gamezip" 
@@ -36,8 +39,10 @@ rm "$gamezip"
 mkdir "assets"
 rm "FNANCZ 2.exe"
 mv "data.win" "assets"
+
 if [ -f "6am-animation.mp4" ]; then
     mv "6am-animation.mp4" "6am_animation.mp4"
+
 fi
 mv "6am_animation.mp4" "assets"
 mv "options.ini" "assets"
@@ -54,7 +59,7 @@ unzip lib.zip
 rm lib.zip
 chmod +x Five_Nights_at_NCZ_2
 chmod +x run.sh
-if [[ -f "FNANCZ 2.exe" && -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" && -f "lib/libcurl-gnutls.so.4" && -f "lib/libgcrypt.so.11" && -f "lib/libGLU.so.1" && -f "lib/libhogweed.so.4" && -f "lib/libidn.so.11" && -f "lib/libnettle.so.6" && -f "lib/librtmp.so.0" && -f "lib/libssl.so.1.0.0" && -f "assets/6am_animation.mp4" && -f "assets/game.unx" && -f "assets/icon.png" && -f "assets/liblibnekopresence_linux_arm64-v8a.so" && -f "assets/libNekoPresence_x64_linux_arm64-v8a.so" && -f "assets/options.ini" ]]; then
+if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" && -f "lib/libcurl-gnutls.so.4" && -f "lib/libgcrypt.so.11" && -f "lib/libGLU.so.1" && -f "lib/libhogweed.so.4" && -f "lib/libidn.so.11" && -f "lib/libnettle.so.6" && -f "lib/librtmp.so.0" && -f "lib/libssl.so.1.0.0" && -f "assets/6am_animation.mp4" && -f "assets/game.unx" && -f "assets/icon.png" && -f "assets/liblibnekopresence_linux_arm64-v8a.so" && -f "assets/libNekoPresence_x64_linux_arm64-v8a.so" && -f "assets/options.ini" ]]; then
      echo -e "\033[0;34mCongrats, looks like the game has been installed properly. Check for 'Five Nights at NCZ 2' Directory in there.\033[0m"
 else
      echo -e "\e[31mOops! Looks like the game hasn't been installed properly. Retry using the script on a directory with full access to read & write permissions.\e[0m"
