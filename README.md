@@ -19,4 +19,16 @@ Enjoy playing the game!
 
 *< If there were errors during the installation, let me know on discord. >*
 
+**Storage Reduction Mod**
+
+*An xdelta mod that reduces the game storage by 20% (85MBs Less)*
+
+- In order to apply the mod, you will need `xdelta3` package installed before the installation.
+
+After completing the installation of the game without errors, you can apply the mod
+**List of Supported versions**
+- [ ] Demo
+- [ ] 0.9.9
+- [x] 0.9.10 (Hotfix)
+
 see ya next time
