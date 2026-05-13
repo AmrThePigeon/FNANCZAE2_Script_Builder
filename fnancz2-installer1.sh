@@ -12,8 +12,8 @@ gamename="Five Nights at NCZ 2"
 cd "$HOME/Downloads" 2>/dev/null
 cd "$path" 2>/dev/null # kinda stupid way that handles the operation but eh works for now
 currentdir=$(pwd -L)
-if [[ -f "FNaNCZ v0.9.10.zip" || "FNaNCZ+v0.9.10.zip" ]]; then
-mv "FNaNCZ v0.9.10.zip" "FNaNCZ 2 v0.9.10.zip"
+if [[ -f "FNaNCZ v0.9.10.zip" || -f "FNaNCZ+v0.9.10.zip" ]]; then
+     mv "FNaNCZ v0.9.10.zip" "FNaNCZ 2 v0.9.10.zip" 2>/dev/null
 fi
 gamezip2=$(ls -v -r 'FNaNCZ+2+v'* 2>/dev/null | head -n 1)
 if [ -f "$gamezip2" ]; then
