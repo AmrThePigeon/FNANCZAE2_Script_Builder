@@ -149,7 +149,7 @@ if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" &&
           rm -f "FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip" 2>/dev/null
           rm -f "(fnancz2v0.9.10)-storageoptimizationmod.xdelta" 2>/dev/null
           rm -rf "music_n_sfx" 2>/dev/null
-          mv "assets/data.win" "assets/game.unx"
+          mv "assets/data.win" "assets/game.unx" 2>/dev/null
      else
      echo -e "\033[0;34mCancelled Mod installation. Have fun\033[0m"
           fi
@@ -164,9 +164,3 @@ else
           rm -rf "$currentdir/Five Nights at NCZ 2"
           fi
 fi
-
-
-rm -f "$currentpath/$gamename/FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip" 2>/dev/null
-rm -f "$currentpath/$gamename/(fnancz2v0.9.10)-storageoptimizationmod.xdelta" 2>/dev/null
-rm -rf "$currentpath/$gamename/music_n_sfx" 2>/dev/null
-#Leave these 3 lines for now, the script will get updated. I just don't want to lose them
