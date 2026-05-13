@@ -12,6 +12,9 @@ gamename="Five Nights at NCZ 2"
 cd "$HOME/Downloads" 2>/dev/null
 cd "$path" 2>/dev/null # kinda stupid way that handles the operation but eh works for now
 currentdir=$(pwd -L)
+if [[ -f "FNaNCZ v0.9.10.zip" || "FNaNCZ+v0.9.10.zip" ]]; then
+mv "FNaNCZ v0.9.10.zip" "FNaNCZ 2 v0.9.10.zip"
+fi
 gamezip2=$(ls -v -r 'FNaNCZ+2+v'* 2>/dev/null | head -n 1)
 if [ -f "$gamezip2" ]; then
     mv "$gamezip2" "${gamezip2//+/ }"
@@ -131,13 +134,37 @@ fi
 
 if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" && -f "lib/libcurl-gnutls.so.4" && -f "lib/libgcrypt.so.11" && -f "lib/libGLU.so.1" && -f "lib/libhogweed.so.4" && -f "lib/libidn.so.11" && -f "lib/libnettle.so.6" && -f "lib/librtmp.so.0" && -f "lib/libssl.so.1.0.0" && -f "assets/6am_animation.mp4" && -f "assets/game.unx" && -f "assets/icon.png" && -f "assets/liblibnekopresence_linux_arm64-v8a.so" && -f "assets/libNekoPresence_x64_linux_arm64-v8a.so" && -f "assets/options.ini" ]]; then
      echo -e "\033[0;34mCongrats, looks like the game has been installed properly. Check for 'Five Nights at NCZ 2' Directory in there.\033[0m"
+     if [[ "$gamezip" == "FNaNCZ 2 v0.9.10.zip" ]]
+     read -r -p "Game version v0.9.10 detected, do you want to apply the storage reduction mod? (You need to have the xdelta3 package installed) [y/N]:" answer2
+          if [[ "$answer2" == "Y" || "$answer2" == "y" ]]; then
+     echo -e "\033[0;34mCancelled Mod installation. Have fun\033[0m"
+     else
+          echo -e "\033[0;34mApplying the mod...\033[0m"
+          wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip --no-cache
+          unzip FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip
+          mv "assets/game.unx" "assets/data.win"
+          xdelta3 -d -s "assets/data.win" "(fnancz2v0.9.10)-storageoptimizationmod.xdelta" "assets/game.unx"
+          rm -f "assets/data.win" 2>/dev/null
+          mv -r "music_n_sfx" "assets"
+          rm -f "FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip" 2>/dev/null
+          rm -f "(fnancz2v0.9.10)-storageoptimizationmod.xdelta" 2>/dev/null
+          rm -rf "music_n_sfx" 2>/dev/null
+          mv "assets/data.win" "assets/game.unx"
+          fi
+    fi
 else
      echo -e "\e[31mOops! Looks like the game hasn't been installed properly. Retry using the script on a directory with full access to read & write permissions.\e[0m"
-     read -r -p "Are you sure you want to keep the game directory? [y/N]:" answer
-     if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
+     read -r -p "Are you sure you want to keep the game directory? [y/N]:" answer1
+     if [[ "$answer1" == "Y" || "$answer1" == "y" ]]; then
      echo -e "\033[0;34mThe game directory is not going to be deleted\033[0m"
      else
           echo -e "\e[31mDeleting the game directory...\e[0m"
           rm -rf "$currentdir/Five Nights at NCZ 2"
           fi
 fi
+
+
+rm -f "$currentpath/$gamename/FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip" 2>/dev/null
+rm -f "$currentpath/$gamename/(fnancz2v0.9.10)-storageoptimizationmod.xdelta" 2>/dev/null
+rm -rf "$currentpath/$gamename/music_n_sfx" 2>/dev/null
+#Leave these 3 lines for now, the script will get updated. I just don't want to lose them
