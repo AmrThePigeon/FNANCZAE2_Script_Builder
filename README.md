@@ -19,7 +19,8 @@ Enjoy playing the game!
 
 *< If there were errors during the installation, let me know on discord. >*
 
-**Storage Reduction Mod**
+
+# **Storage Reduction Mod**
 
 *An xdelta mod that reduces the game storage by 20% (85MBs Less)*
 
