@@ -154,6 +154,7 @@ if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" &&
           else
           echo -e "\e[31mAn error occurred while applying the mod file\e[0m"
           rm -rf "music_n_sfx"
+          rm -f "(fnancz2v0.9.10)-storageoptimizationmod.xdelta"
           rm -f "FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip" 2>/dev/null
           mv "assets/data.win" "assets/game.unx" 2>/dev/null
           exit 1
