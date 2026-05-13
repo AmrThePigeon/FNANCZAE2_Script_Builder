@@ -150,6 +150,7 @@ if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" &&
           rm -f "(fnancz2v0.9.10)-storageoptimizationmod.xdelta" 2>/dev/null
           rm -rf "music_n_sfx" 2>/dev/null
           mv "assets/data.win" "assets/game.unx" 2>/dev/null
+          echo -e "\033[0;34mThe mod was installed. Have fun\033[0m"
      else
      echo -e "\033[0;34mCancelled Mod installation. Have fun\033[0m"
           fi
