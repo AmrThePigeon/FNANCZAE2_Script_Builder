@@ -134,7 +134,7 @@ fi
 
 if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" && -f "lib/libcurl-gnutls.so.4" && -f "lib/libgcrypt.so.11" && -f "lib/libGLU.so.1" && -f "lib/libhogweed.so.4" && -f "lib/libidn.so.11" && -f "lib/libnettle.so.6" && -f "lib/librtmp.so.0" && -f "lib/libssl.so.1.0.0" && -f "assets/6am_animation.mp4" && -f "assets/game.unx" && -f "assets/icon.png" && -f "assets/liblibnekopresence_linux_arm64-v8a.so" && -f "assets/libNekoPresence_x64_linux_arm64-v8a.so" && -f "assets/options.ini" ]]; then
      echo -e "\033[0;34mCongrats, looks like the game has been installed properly. Check for 'Five Nights at NCZ 2' Directory in there.\033[0m"
-     if [[ "$gamezip" == "FNaNCZ 2 v0.9.10.zip" ]]
+     if [[ "$gamezip" == "FNaNCZ 2 v0.9.10.zip" ]]; then
      read -r -p "Game version v0.9.10 detected, do you want to apply the storage reduction mod? (You need to have the xdelta3 package installed) [y/N]:" answer2
           if [[ "$answer2" == "Y" || "$answer2" == "y" ]]; then
      echo -e "\033[0;34mCancelled Mod installation. Have fun\033[0m"
