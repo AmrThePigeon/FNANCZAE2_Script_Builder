@@ -140,8 +140,8 @@ if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" &&
      echo -e "\033[0;34mCancelled Mod installation. Have fun\033[0m"
      else
           echo -e "\033[0;34mApplying the mod...\033[0m"
-          wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip --no-cache
-          unzip FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip
+          wget "https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip" --no-cache
+          unzip "FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip"
           mv "assets/game.unx" "assets/data.win"
           xdelta3 -d -s "assets/data.win" "(fnancz2v0.9.10)-storageoptimizationmod.xdelta" "assets/game.unx"
           rm -f "assets/data.win" 2>/dev/null
