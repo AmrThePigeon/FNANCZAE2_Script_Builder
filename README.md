@@ -31,5 +31,6 @@ After completing the installation of the game without errors, you can apply the 
 - [ ] Demo
 - [ ] 0.9.9
 - [x] 0.9.10 (Hotfix)
+- [x] 0.9.11 
 
 see ya next time
