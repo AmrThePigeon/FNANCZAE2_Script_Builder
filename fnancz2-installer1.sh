@@ -159,6 +159,29 @@ if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" &&
           mv "assets/data.win" "assets/game.unx" 2>/dev/null
           exit 1
      fi
+          if [[ "$gamezip" == "FNaNCZ 2 v0.9.11.zip" ]]; then
+     read -r -p "Game version v0.9.11 detected, do you want to apply the storage reduction mod? (You need to have the xdelta3 package installed) [y/N]:" answer2
+          if [[ "$answer2" == "Y" || "$answer2" == "y" ]]; then
+          echo -e "\033[0;34mApplying the mod...\033[0m"
+          wget "https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/FNaNCZ_2_v0.9.11_(Storage_Optimization_Mod).zip" --no-cache
+          unzip "FNaNCZ_2_v0.9.11_(Storage_Optimization_Mod).zip"
+          mv "assets/game.unx" "assets/data.win"
+     if xdelta3 -d -s "assets/data.win" "(fnancz2v0.9.11)-storageoptimizationmod.xdelta" "assets/game.unx"; then
+         echo -e "\033[0;34mThe mod was installed. Have fun\033[0m"
+          rm -f "assets/data.win" 2>/dev/null
+          mv "music_n_sfx" "assets" 2>/dev/null
+          rm -f "FNaNCZ_2_v0.9.11_(Storage_Optimization_Mod).zip" 2>/dev/null
+          rm -f "(fnancz2v0.9.11)-storageoptimizationmod.xdelta" 2>/dev/null
+          rm -rf "music_n_sfx" 2>/dev/null
+          mv "assets/data.win" "assets/game.unx" 2>/dev/null
+          else
+          echo -e "\e[31mAn error occurred while applying the mod file\e[0m"
+          rm -rf "music_n_sfx"
+          rm -f "(fnancz2v0.9.11)-storageoptimizationmod.xdelta"
+          rm -f "FNaNCZ_2_v0.9.11_(Storage_Optimization_Mod).zip" 2>/dev/null
+          mv "assets/data.win" "assets/game.unx" 2>/dev/null
+          exit 1
+     fi
           
           rm -f "assets/data.win" 2>/dev/null
           mv "music_n_sfx" "assets" 2>/dev/null
