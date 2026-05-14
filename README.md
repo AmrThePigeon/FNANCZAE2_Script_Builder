@@ -27,7 +27,9 @@ Enjoy playing the game!
 - In order to apply the mod, you will need `xdelta3` package installed before the installation.
 
 After completing the installation of the game without errors, you can apply the mod
+
 **List of Supported versions**
+
 - [ ] Demo
 - [ ] 0.9.9
 - [x] 0.9.10 (Hotfix)
