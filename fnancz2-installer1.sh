@@ -159,7 +159,18 @@ if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" &&
           mv "assets/data.win" "assets/game.unx" 2>/dev/null
           exit 1
      fi
-          if [[ "$gamezip" == "FNaNCZ 2 v0.9.11.zip" ]]; then
+          
+          rm -f "assets/data.win" 2>/dev/null
+          mv "music_n_sfx" "assets" 2>/dev/null
+          rm -f "FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip" 2>/dev/null
+          rm -f "(fnancz2v0.9.10)-storageoptimizationmod.xdelta" 2>/dev/null
+          rm -rf "music_n_sfx" 2>/dev/null
+          mv "assets/data.win" "assets/game.unx" 2>/dev/null
+     else
+     echo -e "\033[0;34mCancelled Mod installation. Have fun\033[0m"
+          fi
+    fi
+         if [[ "$gamezip" == "FNaNCZ 2 v0.9.11.zip" ]]; then
      read -r -p "Game version v0.9.11 detected, do you want to apply the storage reduction mod? (You need to have the xdelta3 package installed) [y/N]:" answer2
           if [[ "$answer2" == "Y" || "$answer2" == "y" ]]; then
           echo -e "\033[0;34mApplying the mod...\033[0m"
@@ -185,8 +196,8 @@ if [[ -f "Five_Nights_at_NCZ_2" && -f "run.sh" && -f "lib/libcrypto.so.1.0.0" &&
           
           rm -f "assets/data.win" 2>/dev/null
           mv "music_n_sfx" "assets" 2>/dev/null
-          rm -f "FNaNCZ_2_v0.9.10_(Storage_Optimization_Mod).zip" 2>/dev/null
-          rm -f "(fnancz2v0.9.10)-storageoptimizationmod.xdelta" 2>/dev/null
+          rm -f "FNaNCZ_2_v0.9.11_(Storage_Optimization_Mod).zip" 2>/dev/null
+          rm -f "(fnancz2v0.9.11)-storageoptimizationmod.xdelta" 2>/dev/null
           rm -rf "music_n_sfx" 2>/dev/null
           mv "assets/data.win" "assets/game.unx" 2>/dev/null
      else
