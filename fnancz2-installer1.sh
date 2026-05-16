@@ -25,7 +25,6 @@ gamezip=$(ls -v -r 'FNaNCZ 2 v'* 2>/dev/null | head -n 1)
 if [ ! -f "$gamezip" ]; then
     echo -e "\e[31mError: the game zip file doesn't exist in $(pwd -L)!\e[0m"
     exit 1
-
 fi
 
 if [ -d "$gamename" ]; then
@@ -38,11 +37,16 @@ if [ ! -d "$gamename" ]; then
     echo -e "\e[31mLooks like I don't have permission to do that. Try the script again on a directory with full read & write access.\e[0m"
 fi
 
+versionnumber=${gamezip#FNaNCZ 2 v}
+versionnumber=${versionnumber%.zip}
+
 cp "$gamezip" "$gamename"
 cd "$gamename"
 unzip "$gamezip" 
 rm "$gamezip"
 mkdir "assets"
+touch "versioninfo.txt"
+echo -e "$versionnumber" > /assets/versioninfo.txt
 rm "FNANCZ 2.exe"
 mv "data.win" "assets"
 
@@ -55,7 +59,6 @@ mv "options.ini" "assets"
 mv "assets/data.win" "assets/game.unx"
 rm NekoPresence_x64.dll
 wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/GameRunner.zip --no-cache
-
 unzip GameRunner.zip
 rm GameRunner.zip
 mv libNekoPresence_x64_linux_arm64-v8a.so assets
