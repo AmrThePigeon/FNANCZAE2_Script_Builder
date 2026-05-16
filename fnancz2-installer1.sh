@@ -45,8 +45,8 @@ cd "$gamename"
 unzip "$gamezip" 
 rm "$gamezip"
 mkdir "assets"
-touch "versioninfo.txt"
-echo -e "$versionnumber" > /assets/versioninfo.txt
+touch "assets/versioninfo.txt"
+echo -e "$versionnumber" > "assets/versioninfo.txt"
 rm "FNANCZ 2.exe"
 mv "data.win" "assets"
 
