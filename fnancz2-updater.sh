@@ -1,5 +1,5 @@
 #!/bin/bash
-if command ! -v xdelta3 &> /dev/null; then
+if command -v xdelta3 &> /dev/null; then
   if command -v apt &> /dev/null; then
     sudo apt update && sudo apt install -y xdelta3
 elif command -v dnf &> /dev/null; then
