@@ -22,15 +22,37 @@ else
 fi
 if [[ "$version" == "0.9.11" ]]; then
    echo -e "\033[34mYou are already on latest version\033[0m"
-else
+elif [[ "$version" == "0.9.10" ]]; then
    echo -e "\033[34mUpdating the game files...\033[0m"
 if #Download command here; then 
    unzip #update zip containing the xdelta
    if mv "assets/game.unx" "assets/data.win"; then
       if xdelta3 -d -s "assets/data.win" #xdeltafile "assets/game.unx"; then
       rm "assets/data.win" 2>/dev/null
-      echo -e "
-      echo -e "Update Finished!
+      echo -e "Update Finished!"
+      fi
+   fi
+fi 
+elif [[ "$version" == "0.9.9" ]]; then
+   echo -e "\033[34mUpdating the game files...\033[0m"
+if #Download of v0.9.10 xdelta command here && #Download command of v9.11 xdelta here; then 
+   unzip #update zip containing the xdelta of v0.9.10
+   unzip #update zip containing the xdelta of v0.9.11
+   if mv "assets/game.unx" "assets/data.win"; then
+      if xdelta3 -d -s "assets/data.win" #xdeltafile0.9.10 "assets/data1.win"; then
+           rm "assets/data.win" 2>/dev/null
+         if xdelta3 -d -s "assets/data1.win" #xdeltafile0.9.11 "assets/game.unx"; then
+           rm "assets/data1.win" 2>/dev/null
+           echo -e "Update Finished!"
+           fi
+         fi 
+      fi
+   fi
+fi 
+else 
+echo -e "\e[31mError: Your version is unsupported for updates\e[0m"
+exit 1
+  fi
    else
    echo -e "\e[31mError: permission denied\e[0m"
 fi
