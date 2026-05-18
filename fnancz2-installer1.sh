@@ -1,3 +1,19 @@
+if ! command -v "xdelta3" &> /dev/null && ! command -v "unzip" &> /dev/null && ! command -v "wget" &> /dev/null; then
+  if command -v apt &> /dev/null; then
+    sudo apt update && sudo apt install -y xdelta3 unzip wget
+elif command -v dnf &> /dev/null; then
+    sudo dnf install -y xdelta3 unzip wget
+elif command -v pacman &> /dev/null; then
+    sudo pacman -Sy xdelta3 unzip wget
+elif command -v zypper &> /dev/null; then
+    sudo zypper install -y xdelta3 unzip wget
+else
+    echo "\e[31mError: Supported package manager not found (apt, dnf, pacman, or zypper)\e[0m"
+    echo "You have to manually install the dependencies (wget, unzip and xdelta3)"
+    exit 1
+  fi 
+fi
+
 scriptlocation=$(pwd -L)
 scriptdeletion() {
 rm -f "$scriptlocation/fnancz2-installer1.sh"
