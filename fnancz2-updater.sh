@@ -24,8 +24,7 @@ if [[ "$version" == "0.9.11" ]]; then
    echo -e "\033[34mYou are already on latest version\033[0m"
 elif [[ "$version" == "0.9.10" ]]; then
    echo -e "\033[34mUpdating the game files...\033[0m"
-if #Download command here; then 
-   unzip #update zip containing the xdelta
+if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.xdelta; then 
    if mv "assets/game.unx" "assets/data.win"; then
       if xdelta3 -d -s "assets/data.win" #xdeltafile "assets/game.unx"; then
       rm "assets/data.win" 2>/dev/null
