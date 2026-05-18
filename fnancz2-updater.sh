@@ -29,7 +29,6 @@ if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/downlo
       if xdelta3 -d -s "assets/data.win" #xdeltafile "assets/game.unx"; then
       rm "assets/data.win" 2>/dev/null
       echo -e "Update Finished!"
-      fi
    fi
 fi 
 elif [[ "$version" == "0.9.9" ]]; then
