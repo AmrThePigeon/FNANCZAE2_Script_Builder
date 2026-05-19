@@ -1,15 +1,20 @@
 #!/bin/bash
-if ! command -v "xdelta3" &> /dev/null; then
+if ! command -v "xdelta3" &> /dev/null && ! command -v "unzip" &> /dev/null && ! command -v "wget" &> /dev/null; then
   if command -v apt &> /dev/null; then
-    sudo apt update && sudo apt install -y xdelta3
+    sudo apt update && sudo apt install -y xdelta3 unzip wget
 elif command -v dnf &> /dev/null; then
-    sudo dnf install -y xdelta3
+    sudo dnf install -y xdelta3 unzip wget
 elif command -v pacman &> /dev/null; then
-    sudo pacman -Sy xdelta3
+    sudo pacman -Sy xdelta3 unzip wget
 elif command -v zypper &> /dev/null; then
-    sudo zypper install -y xdelta3
+    sudo zypper install -y xdelta3 unzip wget
+elif command -v apk &> /dev/null; then
+    sudo apk add wget xdelta unzip
+elif command -v emerge &> /dev/null; then
+    sudo emerge net-misc/wget app-arch/xdelta app-arch/unzip
 else
-    echo "Error: Supported package manager not found (apt, dnf, pacman, or zypper)."
+    echo "\e[31mError: Supported package manager not found (apt, dnf, pacman, zypper, apk or emerge)\e[0m"
+    echo "You have to manually install the dependencies (wget, unzip and xdelta3)"
     exit 1
   fi 
 fi
