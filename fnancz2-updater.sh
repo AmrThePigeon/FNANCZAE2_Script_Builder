@@ -25,6 +25,8 @@ else
   echo -e "\e[31mError: Game Files not found\e[0m"
   exit 1
 fi
+
+
 if [[ "$version" == "0.9.11" ]]; then
    echo -e "\033[34mYou are already on latest version\033[0m"
 elif [[ "$version" == "0.9.10" ]]; then
@@ -36,31 +38,30 @@ elif [[ "$version" == "0.9.10" ]]; then
               rm "assets/data.win" 2>/dev/null
               echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
               echo -e "0.9.11" > "assets/versioninfo.txt"
+              exit 1
            fi
         fi
      fi 
 elif [[ "$version" == "0.9.9" ]]; then
    echo -e "\033[34mUpdating the game files...\033[0m"
-if #Download of v0.9.10 xdelta command here && #Download command of v9.11 xdelta here; then 
-   unzip #update zip containing the xdelta of v0.9.10
-   unzip #update zip containing the xdelta of v0.9.11
-   if mv "assets/game.unx" "assets/data.win"; then
-      if xdelta3 -d -s "assets/data.win" #xdeltafile0.9.10 "assets/data1.win"; then
-           rm "assets/data.win" 2>/dev/null
-         if xdelta3 -d -s "assets/data1.win" #xdeltafile0.9.11 "assets/game.unx"; then
-           rm "assets/data1.win" 2>/dev/null
-           echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
+     if #Download of v0.9.10 xdelta command here && #Download command of v9.11 xdelta here; then 
+        unzip #update zip containing the xdelta of v0.9.10
+        unzip #update zip containing the xdelta of v0.9.11
+        if mv "assets/game.unx" "assets/data.win"; then
+           if xdelta3 -d -s "assets/data.win" #xdeltafile0.9.10 "assets/data1.win"; then
+              rm "assets/data.win" 2>/dev/null
+              if xdelta3 -d -s "assets/data1.win" #xdeltafile0.9.11 "assets/game.unx"; then
+                 rm "assets/data1.win" 2>/dev/null
+                 echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
+              fi
            fi
-         fi 
-      fi
-   fi
-fi 
+        else
+          echo -e "\e[31mError: permission denied\e[0m"
+        fi
+     fi 
 else 
-echo -e "\e[31mError: Your version is unsupported for updates\e[0m"
-exit 1
-  fi
-   else
-   echo -e "\e[31mError: permission denied\e[0m"
+   echo -e "\e[31mError: Your version is unsupported for updates\e[0m"
+   exit 1
 fi
 
 # Do not use this script. I'm still working on it and it's not finished
