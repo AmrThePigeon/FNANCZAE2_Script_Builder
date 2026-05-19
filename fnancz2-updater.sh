@@ -62,8 +62,9 @@ elif [[ "$version" == "0.9.10" ]]; then
            mv "assets/data.win" "assets/game.unx"
            echo -e "\e[31mAn error occurred while applying the mod file\e[0m"
            exit 1
+           fi
         fi
-     fi
+      fi
 #elif [[ "$version" == "0.9.9" ]]; then (Version 0.9.9 no longer obtainable)
 #   echo -e "\033[34mUpdating the game files...\033[0m"
 #     if #Download of v0.9.10 xdelta command here && #Download command of v9.11 xdelta here; then 
