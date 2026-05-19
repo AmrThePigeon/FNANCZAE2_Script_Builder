@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 if ! command -v "xdelta3" &> /dev/null && ! command -v "unzip" &> /dev/null && ! command -v "wget" &> /dev/null; then
   if command -v apt &> /dev/null; then
     sudo apt update && sudo apt install -y xdelta3 unzip wget
@@ -9,7 +11,7 @@ elif command -v pacman &> /dev/null; then
 elif command -v zypper &> /dev/null; then
     sudo zypper install -y xdelta3 unzip wget
 elif command -v apk &> /dev/null; then
-    sudo apk add wget xdelta unzip
+    sudo apk add wget xdelta3 unzip
 elif command -v emerge &> /dev/null; then
     sudo emerge net-misc/wget app-arch/xdelta app-arch/unzip
 else
@@ -35,36 +37,33 @@ if [[ "$version" == "0.9.11" ]]; then
 elif [[ "$version" == "0.9.10" ]]; then
    echo -e "\033[34mUpdating the game files...\033[0m"
     if [[ ! -d "assets/music_n_sfx" ]]; then
-      if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.xdelta; then 
-        if mv "assets/game.unx" "assets/data.win"; then
+      wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.xdelta || exit 1 
+       mv "assets/game.unx" "assets/data.win" || exit 1
            if xdelta3 -d -s "assets/data.win" "0.9.10-to-0.9.11.xdelta" "assets/game.unx"; then
               rm "0.9.10-to-0.9.11.xdelta" 2>/dev/null
               rm "assets/data.win" 2>/dev/null
               echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
               echo -e "0.9.11" > "assets/versioninfo.txt"
               read -n 1 -s -p "Press any key to continue..."
-              exit 1
+              exit 0
            fi
-        fi
-     fi
-  else
-      if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.mod.xdelta; then 
-        if mv "assets/game.unx" "assets/data.win"; then
+    else
+      wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.mod.xdelta; exit 1
+      mv "assets/game.unx" "assets/data.win" || exit 1
            if xdelta3 -d -s "assets/data.win" "0.9.10-to-0.9.11.mod.xdelta" "assets/game.unx"; then
               rm "0.9.10-to-0.9.11.mod.xdelta" 2>/dev/null
               rm "assets/data.win" 2>/dev/null
               echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
               echo -e "0.9.11" > "assets/versioninfo.txt"
               read -n 1 -s -p "Press any key to continue..."
-              exit 1       
+              exit 0       
            else
            rm "0.9.10-to-0.9.11.mod.xdelta" 2>/dev/null
            mv "assets/data.win" "assets/game.unx"
            echo -e "\e[31mAn error occurred while applying the mod file\e[0m"
            exit 1
            fi
-        fi
-      fi
+         fi
 #elif [[ "$version" == "0.9.9" ]]; then (Version 0.9.9 no longer obtainable)
 #   echo -e "\033[34mUpdating the game files...\033[0m"
 #     if #Download of v0.9.10 xdelta command here && #Download command of v9.11 xdelta here; then 
