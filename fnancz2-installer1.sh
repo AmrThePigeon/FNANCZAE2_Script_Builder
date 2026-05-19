@@ -78,6 +78,7 @@ mv "6am_animation.mp4" "assets"
 mv "options.ini" "assets"
 mv "assets/data.win" "assets/game.unx"
 rm NekoPresence_x64.dll
+wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/fnancz2-updater.sh --no-cache
 wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/GameRunner.zip --no-cache
 unzip GameRunner.zip
 rm GameRunner.zip
@@ -88,6 +89,7 @@ unzip lib.zip
 rm lib.zip
 chmod +x Five_Nights_at_NCZ_2
 chmod +x run.sh
+chmod +x fnancz2-updater.sh
 
 if [ ! -f "Five_Nights_at_NCZ_2" ]; then
      echo -e "\e[31m'Five_Nights_at_NCZ_2' file not found\e[0m"
