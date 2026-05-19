@@ -48,7 +48,7 @@ elif [[ "$version" == "0.9.10" ]]; then
               exit 0
            fi
     else
-      wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.mod.xdelta; exit 1
+      wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.mod.xdelta || exit 1
       mv "assets/game.unx" "assets/data.win" || exit 1
            if xdelta3 -d -s "assets/data.win" "0.9.10-to-0.9.11.mod.xdelta" "assets/game.unx"; then
               rm "0.9.10-to-0.9.11.mod.xdelta" 2>/dev/null
