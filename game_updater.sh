@@ -6,6 +6,10 @@ rm -f "$scriptlocation/fnancz2-updater.sh"
 }
 trap scriptdeletion EXIT
 
+if [[ -f fnancz2-updater.sh ]]; then
+  rm -f fnancz2-updater.sh
+fi
+
 if [[ -d "assets" && -f "assets/game.unx" ]]; then
    if wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/fnancz2-updater.sh --no-cache; then
       chmod +x fnancz2-updater.sh
