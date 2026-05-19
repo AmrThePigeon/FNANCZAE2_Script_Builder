@@ -24,6 +24,7 @@ if [[ -f "assets/versioninfo.txt" && -f "assets/game.unx" ]]; then
   version=$(head -n 1 "assets/versioninfo.txt")
 else
   echo -e "\e[31mError: Game Files not found\e[0m"
+  xmessage "Error: Game Files not found"
   exit 1
 fi
 
