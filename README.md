@@ -19,6 +19,18 @@ Enjoy playing the game!
 
 *< If there were errors during the installation, let me know on discord. >*
 
+# **Game Updates**
+
+**Game updates can now be applied by executing the `fnancz2-updater.sh` script in the game directory**
+
+Current supported versions:
+
+- [ ] Demo
+- [ ] 0.9.9
+- [x] 0.9.10 (Hotfix)
+- [x] 0.9.11 
+
+There will be more updates coming soon!
 
 # **Storage Reduction Mod**
 
