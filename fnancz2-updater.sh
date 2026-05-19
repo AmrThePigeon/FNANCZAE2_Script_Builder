@@ -15,6 +15,7 @@ elif command -v emerge &> /dev/null; then
 else
     echo "\e[31mError: Supported package manager not found (apt, dnf, pacman, zypper, apk or emerge)\e[0m"
     echo "You have to manually install the dependencies (wget, unzip and xdelta3)"
+    xmessage "Error: Supported package manager not found (apt, dnf, pacman, zypper, apk or emerge), You have to manually install the dependencies (wget, unzip and xdelta3)"
     exit 1
   fi 
 fi
@@ -29,6 +30,7 @@ fi
 
 if [[ "$version" == "0.9.11" ]]; then
    echo -e "\033[34mYou are already on latest version\033[0m"
+   xmessage "You are already on latest version"
 elif [[ "$version" == "0.9.10" ]]; then
    echo -e "\033[34mUpdating the game files...\033[0m"
      if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.xdelta; then 
@@ -38,7 +40,7 @@ elif [[ "$version" == "0.9.10" ]]; then
               rm "assets/data.win" 2>/dev/null
               echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
               echo -e "0.9.11" > "assets/versioninfo.txt"
-              xmessage "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
+              xmessage "Update files have been applied. The game was updated to latest version successfully (v0.9.11)"
               exit 1
            fi
         fi
@@ -62,7 +64,7 @@ elif [[ "$version" == "0.9.10" ]]; then
 #     fi 
 else 
    echo -e "\e[31mError: Your version is unsupported for updates\e[0m"
-   xmessage "\e[31mError: Your version is unsupported for updates\e[0m"
+   xmessage "Error: Your version is unsupported for updates"
    exit 1
 fi
 
