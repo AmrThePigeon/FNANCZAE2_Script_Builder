@@ -38,6 +38,7 @@ elif [[ "$version" == "0.9.10" ]]; then
               rm "assets/data.win" 2>/dev/null
               echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
               echo -e "0.9.11" > "assets/versioninfo.txt"
+              xmessage "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
               exit 1
            fi
         fi
@@ -61,6 +62,7 @@ elif [[ "$version" == "0.9.10" ]]; then
 #     fi 
 else 
    echo -e "\e[31mError: Your version is unsupported for updates\e[0m"
+   xmessage "\e[31mError: Your version is unsupported for updates\e[0m"
    exit 1
 fi
 
