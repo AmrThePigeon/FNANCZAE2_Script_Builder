@@ -29,7 +29,7 @@ elif [[ "$version" == "0.9.10" ]]; then
            if xdelta3 -d -s "assets/data.win" "0.9.10-to-0.9.11.xdelta" "assets/game.unx"; then
               rm "0.9.10-to-0.9.11.xdelta" 2>/dev/null
               rm "assets/data.win" 2>/dev/null
-              echo -e "Update Finished!"
+              echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
               echo -e "0.9.11" > "assets/versioninfo.txt"
            fi
         fi
@@ -44,7 +44,7 @@ if #Download of v0.9.10 xdelta command here && #Download command of v9.11 xdelta
            rm "assets/data.win" 2>/dev/null
          if xdelta3 -d -s "assets/data1.win" #xdeltafile0.9.11 "assets/game.unx"; then
            rm "assets/data1.win" 2>/dev/null
-           echo -e "Update Finished!"
+           echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
            fi
          fi 
       fi
