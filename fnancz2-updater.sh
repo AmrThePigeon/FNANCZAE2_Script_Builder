@@ -57,7 +57,11 @@ elif [[ "$version" == "0.9.10" ]]; then
               echo -e "0.9.11" > "assets/versioninfo.txt"
               read -n 1 -s -p "Press any key to continue..."
               exit 1       
-           fi
+           else
+           rm "0.9.10-to-0.9.11(mod).xdelta" 2>/dev/null
+           mv "assets/data.win" "assets/game.unx"
+           echo -e "\e[31mAn error occurred while applying the mod file\e[0m"
+           exit 1
         fi
      fi
 #elif [[ "$version" == "0.9.9" ]]; then (Version 0.9.9 no longer obtainable)
