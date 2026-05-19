@@ -60,31 +60,60 @@ elif [[ "$version" == "0.9.10" ]]; then
            else
            rm "0.9.10-to-0.9.11.mod.xdelta" 2>/dev/null
            mv "assets/data.win" "assets/game.unx"
-           echo -e "\e[31mAn error occurred while applying the mod file\e[0m"
+           echo -e "\e[31mAn error occurred while applying the update file\e[0m"
+           read -n 1 -s -p "Press any key to continue..."
            exit 1
            fi
          fi
-#elif [[ "$version" == "0.9.9" ]]; then (Version 0.9.9 no longer obtainable)
+#elif [[ "$version" == "0.9.9" ]]; then
 #   echo -e "\033[34mUpdating the game files...\033[0m"
-#     if #Download of v0.9.10 xdelta command here && #Download command of v9.11 xdelta here; then 
-#        unzip #update zip containing the xdelta of v0.9.10
-#        unzip #update zip containing the xdelta of v0.9.11
-#        if mv "assets/game.unx" "assets/data.win"; then
+#   if wget #Download of v0.9.10 xdelta command here && wget #Download command of v0.9.11 xdelta here; then
+#     if mv "assets/game.unx" "assets/data.win"; then
 #           if xdelta3 -d -s "assets/data.win" #xdeltafile0.9.10 "assets/data1.win"; then
-#              rm "assets/data.win" 2>/dev/null
+#              mv "assets/data.win" "assets/uselessdatafile.win" 2>/dev/null
 #              if xdelta3 -d -s "assets/data1.win" #xdeltafile0.9.11 "assets/game.unx"; then
 #                 rm "assets/data1.win" 2>/dev/null
+#                 rm "#xdeltafile0.9.10" 2>/dev/null
+#                 rm "#xdeltafile0.9.11" 2>/dev/null
+#                 rm "assets/uselessdatafile.win" 2>/dev/null
+#                 echo -e "0.9.11" > "assets/versioninfo.txt"
 #                 echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
+#                 read -n 1 -s -p "Press any key to continue..."
+#                 exit 0
+#              else
+#                rm "#xdeltafile0.9.10" 2>/dev/null
+#                rm "#xdeltafile0.9.11" 2>/dev/null
+#                rm "assets/data1.win" 2>/dev/null
+#                mv "assets/uselessdatafile.win" "assets/game.unx"
+#                echo -e "\e[31mAn error occurred while applying the 2nd update file\e[0m"
+#                read -n 1 -s -p "Press any key to continue..."
+#                exit 1
 #              fi
+#           else
+#             rm "#xdeltafile0.9.10" 2>/dev/null
+#             rm "#xdeltafile0.9.11" 2>/dev/null
+#             rm "assets/data1.win" 2>/dev/null
+#             mv "assets/data.win" "assets/game.unx"
+#             echo -e "\e[31mAn error occurred while applying the first update file\e[0m"
+#             read -n 1 -s -p "Press any key to continue..."
+#             exit 1
 #           fi
 #        else
 #          echo -e "\e[31mError: permission denied\e[0m"
-#        fi
+#          rm "#xdeltafile0.9.10" 2>/dev/null
+#          rm "#xdeltafile0.9.11" 2>/dev/null
+#          read -n 1 -s -p "Press any key to continue..."
+#          exit 1
 #     fi 
+#    else
+#      echo -e "\e[31mError: Unable to download update files. Please check your internet connection and try again\e[0m"
+#      read -n 1 -s -p "Press any key to continue..."
+#      exit 1
+#   fi
+
+# This part of the script was commented out because of that the version 0.9.9 no longer obtainable, I might need this later for later updates.
 else 
    echo -e "\e[31mError: Your version is unsupported for updates\e[0m"
    read -n 1 -s -p "Press any key to continue..."
    exit 1
 fi
-
-# Do not use this script. Im still working on it and its not finished
