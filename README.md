@@ -23,7 +23,7 @@ Enjoy playing the game!
 
 **Game updates can now be applied by executing the `fnancz2-updater.sh` script in the game directory**
 
-Current supported versions:
+**Current supported versions:**
 
 - [ ] Demo
 - [ ] 0.9.9
