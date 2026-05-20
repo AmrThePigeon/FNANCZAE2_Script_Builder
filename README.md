@@ -19,7 +19,7 @@ Enjoy playing the game!
 
 # **Game Updates**
 
-**Game updates can now be applied by executing the `fnancz2-updater.sh` script in the game directory**
+**Game updates can now be applied by executing the `game_updater.sh` script in the game directory**
 
 **Current supported versions:**
 
