@@ -34,7 +34,6 @@ There will be more updates coming soon!
 
 *An xdelta mod that reduces the game storage by 23% (~100MBs)*
 
-- In order to apply the mod, you will need `xdelta3` package installed before the installation.
 
 After completing the installation of the game without errors, you can apply the mod
 
