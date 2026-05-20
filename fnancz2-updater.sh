@@ -37,8 +37,8 @@ if [[ "$version" == "0.9.11" ]]; then
 elif [[ "$version" == "0.9.10" ]]; then
    echo -e "\033[34mUpdating the game files...\033[0m"
     if [[ ! -d "assets/music_n_sfx" ]]; then
-      wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.fnanczupdate || exit 1 
-       mv "assets/game.unx" "assets/data.win" || exit 1
+      if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.fnanczupdate; then
+         if mv "assets/game.unx" "assets/data.win"; then
            if xdelta3 -d -s "assets/data.win" "0.9.10-to-0.9.11.fnanczupdate" "assets/game.unx"; then
               rm "0.9.10-to-0.9.11.fnanczupdate" 2>/dev/null
               rm "assets/data.win" 2>/dev/null
@@ -47,9 +47,20 @@ elif [[ "$version" == "0.9.10" ]]; then
               read -n 1 -s -p "Press any key to continue..."
               exit 0
            fi
+         else
+           echo -e "\e[31mError: permission denied\e[0m"
+           rm "0.9.10-to-0.9.11.fnanczupdate" 2>/dev/null
+           read -n 1 -s -p "Press any key to continue..."
+           exit 1
+        fi 
+      else
+        echo -e "\e[31mError: Unable to download update files. Please check your internet connection and try again\e[0m"
+        read -n 1 -s -p "Press any key to continue..."
+        exit 1
+      fi
     else
-      wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11-mod.fnanczupdate || exit 1
-      mv "assets/game.unx" "assets/data.win" || exit 1
+      if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11-mod.fnanczupdate; then
+        if mv "assets/game.unx" "assets/data.win"; then
            if xdelta3 -d -s "assets/data.win" "0.9.10-to-0.9.11-mod.fnanczupdate" "assets/game.unx"; then
               rm "0.9.10-to-0.9.11-mod.fnanczupdate" 2>/dev/null
               rm "assets/data.win" 2>/dev/null
@@ -64,7 +75,18 @@ elif [[ "$version" == "0.9.10" ]]; then
            read -n 1 -s -p "Press any key to continue..."
            exit 1
            fi
-         fi
+        else
+           echo -e "\e[31mError: permission denied\e[0m"
+           rm "0.9.10-to-0.9.11.fnanczupdate" 2>/dev/null
+           read -n 1 -s -p "Press any key to continue..."
+           exit 1
+        fi 
+      else
+        echo -e "\e[31mError: Unable to download update files. Please check your internet connection and try again\e[0m"
+        read -n 1 -s -p "Press any key to continue..."
+        exit 1
+      fi
+  fi
 #elif [[ "$version" == "0.9.9" ]]; then
 #   echo -e "\033[34mUpdating the game files...\033[0m"
 #   if wget #Download of v0.9.10 xdelta command here && wget #Download command of v0.9.11 xdelta here; then
