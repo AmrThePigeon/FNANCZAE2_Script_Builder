@@ -13,7 +13,7 @@ elif command -v zypper &> /dev/null; then
 elif command -v apk &> /dev/null; then
     sudo apk add wget xdelta3 unzip
 elif command -v emerge &> /dev/null; then
-    sudo emerge net-misc/wget app-arch/xdelta app-arch/unzip
+    sudo emerge net-misc/wget dev-util/xdelta3 app-arch/unzip
 else
     echo "\e[31mError: Supported package manager not found (apt, dnf, pacman, zypper, apk or emerge)\e[0m"
     echo "You have to manually install the dependencies (wget, unzip and xdelta3)"
