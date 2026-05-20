@@ -15,7 +15,7 @@ if [[ -d "assets" && -f "assets/game.unx" ]]; then
       chmod +x fnancz2-updater.sh
       ./fnancz2-updater.sh
    else
-         echo -e "\e[31mError: Unable to download updater script. Please check your internet connection and try again\e[0m"
+         echo -e "\e[31mError: Unable to download the updater script. Please check your internet connection and try again\e[0m"
          read -n 1 -s -p "Press any key to continue..."
          exit 1
    fi
