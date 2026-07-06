@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-v0-9-10_to_v0-9-11="https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.fnanczupdate"
-v0-9-10_to_v0-9-11_mod="https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11-mod.fnanczupdate"
-v0-9-11_to_v0-9-12="https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.11-to-0.9.12.fnanczupdate"
+v0_9_10_to_v0_9_11="https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.fnanczupdate"
+v0_9_10_to_v0_9_11_mod="https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11-mod.fnanczupdate"
+v0_9_11_to_v0_9_12="https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.11-to-0.9.12.fnanczupdate"
 
 
 
@@ -43,7 +43,7 @@ if [[ "$version" == "0.9.12" ]]; then
 # Version v0.9.11 Update
 elif [[ "$version" == "0.9.11" ]]; then
    echo -e "\033[34mUpdating the game files...\033[0m"
-      if wget "$v0-9-11_to_v0-9-12"; then
+      if wget "$v0_9_11_to_v0_9_12"; then
          if mv "assets/game.unx" "assets/data.win"; then
            if xdelta3 -d -s "assets/data.win" "0.9.11-to-0.9.12.fnanczupdate" "assets/game.unx"; then
               rm "0.9.11-to-0.9.12.fnanczupdate" 2>/dev/null
@@ -68,7 +68,7 @@ elif [[ "$version" == "0.9.11" ]]; then
 # Version v0.9.10 Update
 elif [[ "$version" == "0.9.10" ]]; then
    echo -e "\033[34mUpdating the game files...\033[0m"
-   if wget "$v0-9-10_to_v0-9-11" && wget "$v0-9-11_to_v0-9-12"; then
+   if wget "$v0_9_10_to_v0_9_11" && wget "$v0_9_11_to_v0_9_12"; then
      if mv "assets/game.unx" "assets/data.win"; then
            if xdelta3 -d -s "assets/data.win" "0.9.10-to-0.9.11.fnanczupdate" "assets/data1.win"; then
               mv "assets/data.win" "assets/uselessdatafile.win" 2>/dev/null
