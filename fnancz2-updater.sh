@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+v0-9-10_to_v0-9-11="https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.fnanczupdate"
+v0-9-10_to_v0-9-11_mod="https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11-mod.fnanczupdate"
+v0-9-11_to_v0-9-12="https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.11-to-0.9.12.fnanczupdate"
+
+
+
 if ! command -v "xdelta3" &> /dev/null && ! command -v "unzip" &> /dev/null && ! command -v "wget" &> /dev/null; then
   if command -v apt &> /dev/null; then
     sudo apt update && sudo apt install -y xdelta3 unzip wget
@@ -31,25 +37,25 @@ else
 fi
 
 
-if [[ "$version" == "0.9.11" ]]; then
+if [[ "$version" == "0.9.12" ]]; then
    echo -e "\033[34mYou are already on latest version\033[0m"
    read -n 1 -s -p "Press any key to continue..."
-elif [[ "$version" == "0.9.10" ]]; then
+# Version v0.9.11 Update
+elif [[ "$version" == "0.9.11" ]]; then
    echo -e "\033[34mUpdating the game files...\033[0m"
-    if [[ ! -d "assets/music_n_sfx" ]]; then
-      if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.fnanczupdate; then
+      if wget "$v0-9-11_to_v0-9-12"; then
          if mv "assets/game.unx" "assets/data.win"; then
-           if xdelta3 -d -s "assets/data.win" "0.9.10-to-0.9.11.fnanczupdate" "assets/game.unx"; then
-              rm "0.9.10-to-0.9.11.fnanczupdate" 2>/dev/null
+           if xdelta3 -d -s "assets/data.win" "0.9.11-to-0.9.12.fnanczupdate" "assets/game.unx"; then
+              rm "0.9.11-to-0.9.12.fnanczupdate" 2>/dev/null
               rm "assets/data.win" 2>/dev/null
-              echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
-              echo -e "0.9.11" > "assets/versioninfo.txt"
+              echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.12)\033[0m"
+              echo -e "0.9.12" > "assets/versioninfo.txt"
               read -n 1 -s -p "Press any key to continue..."
               exit 0
            fi
          else
            echo -e "\e[31mError: permission denied\e[0m"
-           rm "0.9.10-to-0.9.11.fnanczupdate" 2>/dev/null
+           rm "0.9.11-to-0.9.12.fnanczupdate" 2>/dev/null
            read -n 1 -s -p "Press any key to continue..."
            exit 1
         fi 
@@ -58,35 +64,54 @@ elif [[ "$version" == "0.9.10" ]]; then
         read -n 1 -s -p "Press any key to continue..."
         exit 1
       fi
-    else
-      if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11-mod.fnanczupdate; then
-        if mv "assets/game.unx" "assets/data.win"; then
-           if xdelta3 -d -s "assets/data.win" "0.9.10-to-0.9.11-mod.fnanczupdate" "assets/game.unx"; then
-              rm "0.9.10-to-0.9.11-mod.fnanczupdate" 2>/dev/null
-              rm "assets/data.win" 2>/dev/null
-              echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.11)\033[0m"
-              echo -e "0.9.11" > "assets/versioninfo.txt"
-              read -n 1 -s -p "Press any key to continue..."
-              exit 0       
+
+# Version v0.9.10 Update
+elif [[ "$version" == "0.9.10" ]]; then
+   echo -e "\033[34mUpdating the game files...\033[0m"
+   if wget "$v0-9-10_to_v0-9-11" && wget "$v0-9-11_to_v0-9-12"; then
+     if mv "assets/game.unx" "assets/data.win"; then
+           if xdelta3 -d -s "assets/data.win" "0.9.10-to-0.9.11.fnanczupdate" "assets/data1.win"; then
+              mv "assets/data.win" "assets/uselessdatafile.win" 2>/dev/null
+              if xdelta3 -d -s "assets/data1.win" "0.9.11-to-0.9.12.fnanczupdate" "assets/game.unx"; then
+                 rm "assets/data1.win" 2>/dev/null
+                 rm "0.9.10-to-0.9.11.fnanczupdate" 2>/dev/null
+                 rm "0.9.11-to-0.9.12.fnanczupdate" 2>/dev/null
+                 rm "assets/uselessdatafile.win" 2>/dev/null
+                 echo -e "0.9.12" > "assets/versioninfo.txt"
+                 echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.12)\033[0m"
+                 read -n 1 -s -p "Press any key to continue..."
+                 exit 0
+              else
+                rm "0.9.10-to-0.9.11.fnanczupdate" 2>/dev/null
+                rm "0.9.11-to-0.9.12.fnanczupdate" 2>/dev/null
+                rm "assets/data1.win" 2>/dev/null
+                mv "assets/uselessdatafile.win" "assets/game.unx"
+                echo -e "\e[31mAn error occurred while applying the 2nd update file\e[0m"
+                read -n 1 -s -p "Press any key to continue..."
+                exit 1
+              fi
            else
-           rm "0.9.10-to-0.9.11-mod.fnanczupdate" 2>/dev/null
-           mv "assets/data.win" "assets/game.unx"
-           echo -e "\e[31mAn error occurred while applying the update file\e[0m"
-           read -n 1 -s -p "Press any key to continue..."
-           exit 1
+             rm "0.9.10-to-0.9.11.fnanczupdate" 2>/dev/null
+             rm "0.9.11-to-0.9.12.fnanczupdate" 2>/dev/null
+             rm "assets/data1.win" 2>/dev/null
+             mv "assets/data.win" "assets/game.unx"
+             echo -e "\e[31mAn error occurred while applying the first update file\e[0m"
+             read -n 1 -s -p "Press any key to continue..."
+             exit 1
            fi
         else
-           echo -e "\e[31mError: permission denied\e[0m"
-           rm "0.9.10-to-0.9.11.fnanczupdate" 2>/dev/null
-           read -n 1 -s -p "Press any key to continue..."
-           exit 1
-        fi 
-      else
-        echo -e "\e[31mError: Unable to download update files. Please check your internet connection and try again\e[0m"
-        read -n 1 -s -p "Press any key to continue..."
-        exit 1
-      fi
-  fi
+          echo -e "\e[31mError: permission denied\e[0m"
+          rm "0.9.10-to-0.9.11.fnanczupdate" 2>/dev/null
+          rm "0.9.11-to-0.9.12.fnanczupdate" 2>/dev/null
+          read -n 1 -s -p "Press any key to continue..."
+          exit 1
+     fi 
+    else
+      echo -e "\e[31mError: Unable to download update files. Please check your internet connection and try again\e[0m"
+      read -n 1 -s -p "Press any key to continue..."
+      exit 1
+   fi
+
 #elif [[ "$version" == "0.9.9" ]]; then
 #   echo -e "\033[34mUpdating the game files...\033[0m"
 #   if wget #Download of v0.9.10 xdelta command here && wget #Download command of v0.9.11 xdelta here; then
