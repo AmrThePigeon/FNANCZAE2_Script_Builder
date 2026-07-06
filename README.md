@@ -33,7 +33,8 @@ Enjoy playing the game!
 - [ ] Demo
 - [ ] 0.9.9
 - [x] 0.9.10 (Hotfix)
-- [x] 0.9.11 
+- [x] 0.9.11
+- [x] 0.9.12
 
 There will be more updates coming soon!
 
@@ -49,6 +50,7 @@ After completing the installation of the game without errors, you can apply the 
 - [ ] Demo
 - [ ] 0.9.9
 - [x] 0.9.10 (Hotfix)
-- [x] 0.9.11 
+- [x] 0.9.11
+- [ ] 0.9.12
 
 see ya next time
