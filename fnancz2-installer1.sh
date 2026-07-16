@@ -91,6 +91,24 @@ chmod +x Five_Nights_at_NCZ_2
 chmod +x run.sh
 chmod +x game_updater.sh
 
+if [[ "$versionnumber" == "0.9.12" ]]; then
+   if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/0.9.12update/fnancz_2_yoyorunner_v0.9.12.fnancz; then
+      if xdelta3 -d -s Five_Nights_at_NCZ_2 fnancz_2_yoyorunner_v0.9.12.fnancz Five_Nights_at_NCZ_2_yoyo; then
+         rm fnancz_2_yoyorunner_v0.9.12.fnancz
+         rm Five_Nights_at_NCZ_2
+         echo -e "\033[0;34mCompiler switching for v0.9.12 complete\033[0m"
+         else
+           echo -e "\e[31mError while applying the new compiler, the game will won't run properly\e[0m"
+           rm fnancz_2_yoyorunner_v0.9.12.fnancz
+           rm Five_Nights_at_NCZ_2_yoyo
+           exit 1
+      fi
+   else
+     echo -e "\e[31mError: Failed to download assets, please check your internet connection then try again.\e[0m"
+     exit 1
+   fi
+fi
+
 if [ ! -f "Five_Nights_at_NCZ_2" ]; then
      echo -e "\e[31m'Five_Nights_at_NCZ_2' file not found\e[0m"
 fi
