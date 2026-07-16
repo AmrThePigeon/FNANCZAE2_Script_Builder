@@ -96,6 +96,7 @@ if [[ "$versionnumber" == "0.9.12" ]]; then
       if xdelta3 -d -s Five_Nights_at_NCZ_2 fnancz_2_yoyorunner_v0.9.12.fnancz Five_Nights_at_NCZ_2_yoyo; then
          rm fnancz_2_yoyorunner_v0.9.12.fnancz
          rm Five_Nights_at_NCZ_2
+         mv Five_Nights_at_NCZ_2_yoyo Five_Nights_at_NCZ_2
          echo -e "\033[0;34mCompiler switching for v0.9.12 complete\033[0m"
          else
            echo -e "\e[31mError while applying the new compiler, the game will won't run properly\e[0m"
