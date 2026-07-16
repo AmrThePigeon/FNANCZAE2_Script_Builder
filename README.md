@@ -38,19 +38,4 @@ Enjoy playing the game!
 
 There will be more updates coming soon!
 
-# **Storage Reduction Mod**
-
-*An xdelta mod that reduces the game storage by 23% (~100MBs)*
-
-
-After completing the installation of the game without errors, you can apply the mod
-
-**List of Supported versions**
-
-- [ ] Demo
-- [ ] 0.9.9
-- [x] 0.9.10 (Hotfix)
-- [x] 0.9.11
-- [ ] 0.9.12
-
 see ya next time
