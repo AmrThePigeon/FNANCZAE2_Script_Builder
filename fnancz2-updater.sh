@@ -45,8 +45,24 @@ elif [[ "$version" == "0.9.11" ]]; then
            if xdelta3 -d -s "assets/data.win" "0.9.11-to-0.9.12.fnanczupdate" "assets/game.unx"; then
               rm "0.9.11-to-0.9.12.fnanczupdate" 2>/dev/null
               rm "assets/data.win" 2>/dev/null
-              echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.12)\033[0m"
+              if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/0.9.12update/fnancz_2_yoyorunner_v0.9.12.fnancz --no-cache; then
+                 if xdelta3 -d -s Five_Nights_at_NCZ_2 fnancz_2_yoyorunner_v0.9.12.fnancz Five_Nights_at_NCZ_2_yoyo; then
+                    rm fnancz_2_yoyorunner_v0.9.12.fnancz
+                    rm Five_Nights_at_NCZ_2
+                    mv Five_Nights_at_NCZ_2_yoyo Five_Nights_at_NCZ_2
+                    echo -e "\033[0;34mCompiler switching for v0.9.12 complete\033[0m"
+                 else
+                    echo -e "\e[31mError while applying the new compiler, the game will won't run properly\e[0m"
+                    rm fnancz_2_yoyorunner_v0.9.12.fnancz
+                    rm Five_Nights_at_NCZ_2_yoyo
+                    exit 1
+                 fi
+              else
+                echo -e "\e[31mError: Unable to download update files. Please check your internet connection and try again.\e[0m"
+                exit 1
+              fi
               echo -e "0.9.12" > "assets/versioninfo.txt"
+              echo -e "\033[34mUpdate files have been applied. The game was updated to latest version successfully (v0.9.12)\033[0m"
               read -n 1 -s -p "Press any key to continue..."
               exit 0
            fi
@@ -79,6 +95,7 @@ elif [[ "$version" == "0.9.10" ]]; then
                    if xdelta3 -d -s Five_Nights_at_NCZ_2 fnancz_2_yoyorunner_v0.9.12.fnancz Five_Nights_at_NCZ_2_yoyo; then
                       rm fnancz_2_yoyorunner_v0.9.12.fnancz
                       rm Five_Nights_at_NCZ_2
+                      mv Five_Nights_at_NCZ_2_yoyo Five_Nights_at_NCZ_2
                       echo -e "\033[0;34mCompiler switching for v0.9.12 complete\033[0m"
                   else
                     echo -e "\e[31mError while applying the new compiler, the game will won't run properly\e[0m"
