@@ -2,7 +2,7 @@
 set -e
 
 v0_9_10_to_v0_9_11="https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.10-to-0.9.11.fnanczupdate"
-v0_9_11_to_v0_9_12="https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/Updates/0.9.11-to-0.9.12.fnanczupdate"
+v0_9_11_to_v0_9_12="https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/0.9.12update/0.9.11.to.0.9.12.fnanczupdate"
 
 if ! command -v "xdelta3" &> /dev/null && ! command -v "unzip" &> /dev/null && ! command -v "wget" &> /dev/null; then
   if command -v apt &> /dev/null; then
