@@ -24,6 +24,8 @@ rm -f "$scriptlocation/fnancz2-installer1.sh"
 }
 trap scriptdeletion EXIT
 
+clear
+
 echo -e "\e[31mP.S: you must give full path of the zip without any shortcut\e[0m"
 echo -e "Press [ENTER] if the game zip file was downloaded in $HOME/Downloads directory."
 read -r -p "Game zip file path [Defaulted=Downloads]:" path
