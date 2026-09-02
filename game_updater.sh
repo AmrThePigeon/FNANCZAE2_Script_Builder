@@ -11,7 +11,7 @@ if [[ -f fnancz2-updater.sh ]]; then
 fi
 
 if [[ -d "assets" && -f "assets/game.unx" ]]; then
-   if wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/fnancz2-updater.sh --no-cache; then
+   if wget -q https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/fnancz2-updater.sh --no-cache; then
       chmod +x fnancz2-updater.sh
       ./fnancz2-updater.sh
    else
