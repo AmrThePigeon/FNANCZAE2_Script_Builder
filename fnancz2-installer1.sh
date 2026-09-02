@@ -92,7 +92,7 @@ chmod +x run.sh
 chmod +x game_updater.sh
 
 if [[ "$versionnumber" == "0.9.12" ]]; then
-   if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/0.9.12update/fnancz_2_yoyorunner_v0.9.12.fnancz && https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/0.9.12update/fnancz2_update0.9.12_fix.fnanczupdate; then
+   if wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/0.9.12update/fnancz_2_yoyorunner_v0.9.12.fnancz --no-cache && wget https://github.com/AmrThePigeon/FNANCZAE2_Script_Builder/releases/download/0.9.12update/fnancz2_update0.9.12_fix.fnanczupdate --no-cache; then
       if xdelta3 -d -s Five_Nights_at_NCZ_2 fnancz_2_yoyorunner_v0.9.12.fnancz Five_Nights_at_NCZ_2_yoyo; then
          if xdelta3 -d -s "assets/game.unx" fnancz2_update0.9.12_fix.fnanczupdate "assets/game.unx"; then
             rm fnancz2_update0.9.12_fix.fnanczupdate
