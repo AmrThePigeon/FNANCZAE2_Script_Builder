@@ -18,7 +18,7 @@ A Script that builds Five Night's at NCZ 2 game made by MM33 to a usable linux e
 
 - Run this command line
 ```
-rm -f fnancz2-installer1.sh >/dev/null 2>&1 && wget https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/fnancz2-installer1.sh --no-cache && chmod +x fnancz2-installer1.sh && ./fnancz2-installer1.sh
+rm -f fnancz2-installer1.sh >/dev/null 2>&1 && wget -q https://raw.githubusercontent.com/AmrThePigeon/FNANCZAE2_Script_Builder/refs/heads/main/fnancz2-installer1.sh --no-cache && chmod +x fnancz2-installer1.sh && ./fnancz2-installer1.sh
 ```
 Enjoy playing the game!
 
